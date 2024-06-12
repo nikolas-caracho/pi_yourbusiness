@@ -107,7 +107,7 @@ ALTER TABLE `usuarios`
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
---
+--s 
 ALTER TABLE `produtos`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
