@@ -2,11 +2,21 @@
 global $conn;
 require '../utils/conexao.php';
 
+// Verifica se a conexão foi bem-sucedida
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 // Prepara a consulta SQL
-$sql = "SELECT id, nome, razao, tamanho, fundacao, tributacao FROM produtos;";
+$sql = "SELECT id, nome, razao_social, tamanho, fundacao, tributacao FROM produtos;";
 
 // Executa a consulta SQL
 $resultado = $conn->query($sql);
+
+// Verifica se a consulta foi bem-sucedida
+if (!$resultado) {
+    die("Query failed: " . $conn->error);
+}
 ?>
 
 <!DOCTYPE html>
@@ -121,9 +131,7 @@ $resultado = $conn->query($sql);
                 <legend class="w-auto p-1 border rounded">Lista De Produtos</legend>
                 <div class="row">
                     <div class="col-sm-2">
-                        <a href="../dashboard.php">
-                            <button type="button" class="btn btn-primary">Voltar</button>
-                        </a>
+                        <a href="../dashboard.php" class="btn btn-primary">Voltar</a>
                     </div>
                     <div class="col-sm-4">
                         <label for="txt_nome">Nome:</label>
@@ -149,10 +157,10 @@ $resultado = $conn->query($sql);
                         <th>Ação</th>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Razao social</th>
+                        <th>Razão Social</th>
                         <th>Tamanho</th>
-                        <th>Fundacao</th>
-                        <th>Tributacao</th>
+                        <th>Fundação</th>
+                        <th>Tributação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -170,7 +178,7 @@ $resultado = $conn->query($sql);
                             </td>
                             <td><?= $linha['id'] ?></td>
                             <td><?= $linha['nome'] ?></td>
-                            <td><?= $linha['razao'] ?></td>
+                            <td><?= $linha['razao_social'] ?></td>
                             <td><?= $linha['tamanho'] ?></td>
                             <td><?= $linha['fundacao'] ?></td>
                             <td><?= $linha['tributacao'] ?></td>
@@ -182,11 +190,10 @@ $resultado = $conn->query($sql);
             </table>
         </form>
     </div>
-</body>
-
-<footer class="footer bg-white border-top border-2 border-dark position-absolute w-100">
+    <footer class="footer bg-white border-top border-2 border-dark mt-5">
         <div class="container text-center py-3">
             Projeto desenvolvido por: Nikolas Arruda
         </div>
     </footer>
+</body>
 </html>
