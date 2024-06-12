@@ -6,6 +6,8 @@
 //include tenta incluir o arquivo, se nao consegue mata exibe um erro
 //_once verifica se o arquivo ja foi incluido anteriormente e importa somente se não
 require 'utils/conexao.php';
+
+// arrumar index
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

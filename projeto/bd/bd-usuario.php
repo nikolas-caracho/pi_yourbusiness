@@ -1,4 +1,7 @@
+<?php
 global $conn;
+$linha= 0;
+//falta isset no $linha
 require '../utils/conexao.php';
 
 // Verifica se a conexão foi bem-sucedida
@@ -7,7 +10,7 @@ if (!isset($conn) || $conn->connect_error) {
 }
 
 // Prepara a consulta SQL
-$sql = "SELECT id, nome, razao_social, tamanho, fundacao, tributacao FROM produtos;";
+$sql = "SELECT id, nome, razao, tamanho, fundacao, tributacao FROM produtos;";
 
 // Executa a consulta SQL
 $resultado = $conn->query($sql);
@@ -125,12 +128,12 @@ if (!$resultado) {
 </head>
 <body>
     <div class="container">
-        <form method="post" action="processar.php">
+        <form method="post" action="conexao.php">
             <fieldset class="border bg-light p-3 rounded shadow">
                 <legend class="w-auto p-1 border rounded">Lista De Produtos</legend>
                 <div class="row">
                     <div class="col-sm-2">
-                        <a href="../dashboard.php" class="btn btn-primary">Voltar</a>
+                        <a href="../../projeto/dashboard.php" class="btn btn-primary">Voltar</a>
                     </div>
                     <div class="col-sm-4">
                         <label for="txt_nome">Nome:</label>
@@ -164,12 +167,13 @@ if (!$resultado) {
                 </thead>
                 <tbody>
                     <?php
-                    while ($linha = $resultado->fetch_assoc()) {
+                    while ($linha = $resultado->fetch_assoc()) { // arrumar loop, ctz q e aq
                         ?>
                         <tr scope="row">
                             <td>
-                                <a href="#excluir" class="btn btn-danger">
-                                    <i class="fas fa-trash"></i>
+                                <a href="#excluir" class="btn btn-danger"> 
+                                    <!-- arrumar o botão excluir dnv -->
+                                    <i class="fas fa-trash"></i> 
                                 </a>
                                 <a href="cadastro_produto.php?id=<?= $linha['id'] ?>" class="btn btn-secondary">
                                     <i class="fas fa-pen"></i>
@@ -189,7 +193,8 @@ if (!$resultado) {
             </table>
         </form>
     </div>
-    <footer class="footer bg-white border-top border-2 border-dark mt-5">
+    <footer class="footer bg-white border-top border-2 border-dark mt-5"> 
+        <!-- melhorar design do footer -->
         <div class="container text-center py-3">
             Projeto desenvolvido por: Nikolas Arruda
         </div>

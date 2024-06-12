@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 }
 
 // Prepara a consulta SQL
-$sql = "SELECT id, nome, razao_social, tamanho, fundacao, tributacao FROM produtos;";
+$sql = "SELECT id, nome, razao, tamanho, fundacao, tributacao FROM produtos;";
 
 // Executa a consulta SQL
 $resultado = $conn->query($sql);
@@ -178,7 +178,7 @@ if (!$resultado) {
                             </td>
                             <td><?= $linha['id'] ?></td>
                             <td><?= $linha['nome'] ?></td>
-                            <td><?= $linha['razao_social'] ?></td>
+                            <td><?= $linha['razao'] ?></td>
                             <td><?= $linha['tamanho'] ?></td>
                             <td><?= $linha['fundacao'] ?></td>
                             <td><?= $linha['tributacao'] ?></td>

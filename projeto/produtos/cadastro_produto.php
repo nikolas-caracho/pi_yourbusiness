@@ -93,7 +93,7 @@
                         <input class="form-control" id="nome" name="nome" type="text" placeholder="Nome">
                     </div>
                     <div class="col-sm-6">
-                        <label for="razao_social">Razão Social:</label>
+                        <label for="razao">Razão Social:</label>
                         <input class="form-control" id="razao" name="razao" type="text" placeholder="Razão Social">
                     </div>
                     <div class="col-sm-6">

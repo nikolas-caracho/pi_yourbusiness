@@ -1,5 +1,6 @@
 
 <?php
+//oq ta errado?
 require '../utils/conexao.php';
 //conferir sempre essa tela
 //prepara a consulta SQl

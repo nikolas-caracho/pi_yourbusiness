@@ -34,7 +34,7 @@
                                 Usuários
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/usuarios/iu_usuario.php">Cadastro</a>
+                                <a class="dropdown-item" href="/projeto/usuarios/iu_usuario.php">Cadastro</a>
                                 <a class="dropdown-item" href="/projeto/usuarios/cntrlUsers.php">lista de usuários</a>
                                 <a class="dropdown-item" href="/projeto/produtsos/cadastro_produto.php">Cadastro de itens</a>
                                 <a class="dropdown-item" href="/projeto/produtos/lista_produtos.php">Lista de itens</a>

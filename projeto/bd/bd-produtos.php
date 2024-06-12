@@ -22,7 +22,7 @@ echo "Tributos: " . $tributos . "<br>";
 echo "Ação: " . $acao . "<br>";
 
 if ($acao == "INCLUIR") {
-    $sql = "INSERT INTO produtos (razao_social, fundacao, ramo, tamanho, tributos)
+    $sql = "INSERT INTO produtos (razao, fundacao, ramo, tamanho, tributos)
       VALUES (?, ?, ?, ?, ?);";
 
     $stmt = $conn->prepare($sql);
