@@ -25,14 +25,14 @@ USE `pi_yourbusiness`;
 
 DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
-  `id` int(200) NOT NULL,
+  `id` int(11) NOT NULL,
   `cliente` varchar(200) NOT NULL,
   `razao` varchar(200) NOT NULL,
   `fundacao` year NOT NULL,
   `ramo` varchar(200) NOT NULL,
   `tamanho` varchar(20) NOT NULL,
   `produto` varchar(200) NOT NULL,
-  `estoque_minimo` varchar(20) NOT NULL,
+  `estoque_minimo` varchar(20) NOT NULL
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
