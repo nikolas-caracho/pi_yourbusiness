@@ -1,0 +1,16 @@
+passos para cadastrar no BD
+1) criar a pagina de cadastro
+
+4)importar o arquivo de conexão
+
+5)criar uma variavel para cada input do formulario testando se vem um valor para ela, se não colocar null
+
+6) fazer um teste para saber qual ação o usuario quer fazer, se ela for invalidade, tirar ele desse arquivo
+
+7) criar o script sql de insert trocando os valores por "?"
+
+8) com a variavel de conexão, preparar o script sql
+
+9) passar as variaveis para o bind_param
+
+10) testar se a conexão funcionou, caso positivo levar para a pagina de listagem, caso negativo voltar para a pagina de cadastro
