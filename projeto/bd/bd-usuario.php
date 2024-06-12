@@ -1,13 +1,16 @@
 <?php
 require "../utils/conexao.php";
 
+// Verifica se a conexão foi bem-sucedida
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if(isset($_POST['nome']) && !empty($_POST['nome'])){
     $nome = $_POST['nome'] ;
 }else{
     $nome = "vazio";
 }
-
 
 echo "nome: " . $nome . "<br>";
 
@@ -71,25 +74,18 @@ if($acao == "INCLUIR"){
     $stmt->bind_param("sisssssssssss", $nome, $nivel_acesso, $cep, $endereco, $ncasa,
                      $complemento, $cidade, $estado, $senha, $email, $telefone, $dn, $cpf);
 
+    // a função execute envia o script SQL todo arrumado para o BD, com as variaveis nos lugares das ?
 
-    // a função execute envia o script SQL todo arrumado para o BD, com as variaveis nos ligares das ?
-
-    try{
+    try {
         if ($stmt->execute()){
-        //pega o numero do ID que foi inserido no BD
-        $idCadastro = $conn->insert_id;
-        echo $idCadastro;
-
-        
-
-
-
-    }else{
-        echo $stmt->error;
-    }
-    }catch (exeption $e){
-        echo"erro ao cadastrar!";
-
+            //pega o numero do ID que foi inserido no BD
+            $idCadastro = $conn->insert_id;
+            echo $idCadastro;
+        } else {
+            echo $stmt->error;
+        }
+    } catch (Exception $e) {
+        echo "Erro ao cadastrar!";
         ?>
         <script>
             history.back();
@@ -98,7 +94,6 @@ if($acao == "INCLUIR"){
     }
 
     $stmt->close();
-
     $conn->close();
 
     // neste bloco sera inserido um novo redistro no BD
@@ -106,17 +101,15 @@ if($acao == "INCLUIR"){
     print_r($_POST);
     echo "</prev>";
     
-    
-} else if ($acao == "alterar"){
+} else if ($acao == "ALTERAR"){
     //neste bloco sera alterado um registro que ja existe no BD
 } else if ($acao == "DELETAR"){
-    //neste bloco sera esculido um registro que ja existe no BD
-}else{
+    //neste bloco sera excluido um registro que ja existe no BD
+} else {
     // Se nenhuma das operações for solicitada, para o inicio do site
     //a função header modifica o cabeçalho do navegador
-    // ao passa a propriedade location, definimos para qual URL o navegador deve ir
-    header("locattion; /projeto/");
+    // ao passar a propriedade location, definimos para qual URL o navegador deve ir
+    header("Location: /projeto/");
     exit;
 }
-
 ?>
