@@ -1,4 +1,5 @@
 
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -46,7 +47,7 @@ INSERT INTO `produtos` (`id`, `nome`, `razao`, `fundacao`, `ramo`, `tamanho`,`pr
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
-  `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1,
+  `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `cliente` varchar(254) NOT NULL,
   `nivel_acesso` tinyint(4) NOT NULL,
   `cep` varchar(10) DEFAULT NULL,
@@ -99,7 +100,7 @@ ALTER TABLE `usuarios`
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
---s 
+-- 
 ALTER TABLE `produtos`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
