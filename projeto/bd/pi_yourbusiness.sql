@@ -47,7 +47,7 @@ INSERT INTO `produtos` (`id`, `nome`, `razao`, `fundacao`, `ramo`, `tamanho`,`pr
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
-  `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_usuario` bigint(20) UNSIGNED NOT NULL,
   `cliente` varchar(254) NOT NULL,
   `nivel_acesso` tinyint(4) NOT NULL,
   `cep` varchar(10) DEFAULT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nome`, `nivel_acesso`, `cep`, `endereco`, `numero`, `complemento`, `cidade`, `estado`, `senha`, `email`, `telefone`, `data_nascimento`, `cpf`) VALUES
+INSERT INTO `usuarios` (`id_usuario`, `cliente`, `nivel_acesso`, `cep`, `endereco`, `numero`, `complemento`, `cidade`, `estado`, `senha`, `email`, `telefone`, `data_nascimento`, `cpf`) VALUES
 (1, 'asd', 1, '234324', '23423s', '234', 'asdf', 'sadsad', '9', 'dsfsdf', '546546', '324234', '2024-05-22', 'asd'),
 (2, 'asd', 1, '234324', '23423s', '234', 'asdf', 'sadsad', '9', 'dsfsdf', '546546', '324234', '2024-05-22', 'asd'),
 (3, 'asd', 1, '234324', '23423s', '234', 'asdf', 'sadsad', '9', 'dsfsdf', '546546', '324234', '2024-05-22', 'asd'),
@@ -114,3 +114,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */; 
