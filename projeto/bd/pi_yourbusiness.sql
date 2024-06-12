@@ -1,5 +1,3 @@
-
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -18,26 +16,26 @@ USE `pi_yourbusiness`;
 
 DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `razao` varchar(200) NOT NULL,
   `fundacao` year NOT NULL,
   `ramo` varchar(200) NOT NULL,
   `tamanho` varchar(20) NOT NULL,
   `produto` varchar(200) NOT NULL,
-  `estoque_minimo` varchar(20) NOT NULL
-  
+  `estoque_minimo` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `razao`, `fundacao`, `ramo`, `tamanho`,`produto`, `estoque_minimo`) VALUES
-(1, '123', '123', '123.00', 'Exemplo Razao Social', 'P', 'Pequeno', '435543'),
-(2, 'eoqwoeq', 'asdsad', '34324.00', 'Outra Razao Social', 'M', 'Médio', 's32324'),
-(3, 'qwpoeiju', 'eewee', '231231.00', 'Mais uma Razao Social', 'G', 'Grande', 'ert'),
-(4, 'ewpqoekqw', 'eweewe', '421124.00', 'Razao Social Ltda', 'P', 'Pequeno', 'ert');
+INSERT INTO `produtos` (`id`, `nome`, `razao`, `fundacao`, `ramo`, `tamanho`, `produto`, `estoque_minimo`) VALUES
+(1, '123', '123', 2023, 'Exemplo Razao Social', 'P', 'Pequeno', '435543'),
+(2, 'eoqwoeq', 'asdsad', 2023, 'Outra Razao Social', 'M', 'Médio', 's32324'),
+(3, 'qwpoeiju', 'eewee', 2023, 'Mais uma Razao Social', 'G', 'Grande', 'ert'),
+(4, 'ewpqoekqw', 'eweewe', 2023, 'Razao Social Ltda', 'P', 'Pequeno', 'ert');
 
 -- --------------------------------------------------------
 
@@ -60,14 +58,15 @@ CREATE TABLE `usuarios` (
   `email` varchar(254) NOT NULL,
   `telefone` varchar(21) DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
-  `cpf` varchar(14) DEFAULT NULL
+  `cpf` varchar(14) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nome`, `nivel_acesso`, `cep`, `endereco`, `numero`, `complemento`, `cidade`, `estado`, `senha`, `email`, `telefone`, `data_nascimento`, `cpf`) VALUES
+INSERT INTO `usuarios` (`id_usuario`, `cliente`, `nivel_acesso`, `cep`, `endereco`, `numero`, `complemento`, `cidade`, `estado`, `senha`, `email`, `telefone`, `data_nascimento`, `cpf`) VALUES
 (1, 'asd', 1, '234324', '23423s', '234', 'asdf', 'sadsad', '9', 'dsfsdf', '546546', '324234', '2024-05-22', 'asd'),
 (2, 'asd', 1, '234324', '23423s', '234', 'asdf', 'sadsad', '9', 'dsfsdf', '546546', '324234', '2024-05-22', 'asd'),
 (3, 'asd', 1, '234324', '23423s', '234', 'asdf', 'sadsad', '9', 'dsfsdf', '546546', '324234', '2024-05-22', 'asd'),
@@ -76,11 +75,11 @@ INSERT INTO `usuarios` (`id_usuario`, `nome`, `nivel_acesso`, `cep`, `endereco`,
 (6, 'i65756765', 0, '65756', '657657', '567567', '576657', '675657', '17', 'dsfsdf', '546546', '7567567', '2024-05-23', '7657657'),
 (7, '5345', 0, '24324', '324324', '324324', '324234', '234324', '14', 'dsfsdf', '546546', '4343', '2024-05-09', '45435435'),
 (8, '5345', 0, '24324', '324324', '324324', '324234', '234324', '14', 'dsfsdf', '546546', '4343', '2024-05-09', '45435435'),
-(9, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '123456', '123456'),
-(10, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '123456', '123456'),
-(11, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '123456', '123456'),
-(12, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '123456', '123456'),
-(13, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '123456', '123456');
+(9, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '2024-05-09', '123456'),
+(10, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '2024-05-09', '123456'),
+(11, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '2024-05-09', '123456'),
+(12, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '2024-05-09', '123456'),
+(13, 'vazio', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf', '546546', '123456', '2024-05-09', '123456');
 
 --
 -- Índices para tabela `produtos`
@@ -102,13 +101,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `produtos`
 -- 
 ALTER TABLE `produtos`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
