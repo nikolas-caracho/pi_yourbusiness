@@ -6,8 +6,12 @@
 //include tenta incluir o arquivo, se nao consegue mata exibe um erro
 //_once verifica se o arquivo ja foi incluido anteriormente e importa somente se não
 require 'utils/conexao.php';
-
+// Fazer o mesmo código de alterar
+//SELECT nome FROM usuarios WHERE email = ? AND senha ?;
+//header("Location: /pi_yourbusiness/?erro=erro');
 // arrumar index
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,7 +40,8 @@ require 'utils/conexao.php';
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto 20px; /* Centralizar a imagem */
+            margin: 0 auto 20px;
+            /* Centralizar a imagem */
         }
 
         .titulo {
@@ -65,21 +70,32 @@ require 'utils/conexao.php';
             <div class="col-md-6">
                 <div class="form-container">
                     <img src="https://busyability.org.au/wp-content/uploads/2021/04/yourbusinesshere.jpeg" class="img-fluid logo" alt="Logo">
-                    <h2 class="titulo">LOGIN</h2>
-                    <form  method="POST">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="senha">Senha</label>
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
-                        </div>
-                        <a href="dashboard.php" type="submit" class="btn btn-success btn-block">Entrar</a>
-                        <div class="mt-3">
-                            <a href="#" class="text-white mr-3">Esqueci a Senha</a>
-                            <span class="float-right"><a href="index.php" class="text-white">Cadastrar</a></span>
-                        </div>
+                    <div class="card-body">
+                        <?php
+                        if (isset($_GET['erro'])) {
+                            echo '<div 
+                            class="alert alert-danger" role="alert">
+                        This is a danger alert—check it out! 
+                                    </div>
+            ';
+                        }
+                        ?>
+                        <h2 class="titulo">LOGIN</h2>
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha</label>
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
+                            </div>
+                            <a href="dashboard.php" type="submit" class="btn btn-success btn-block">Entrar</a>
+                            <div class="mt-3">
+                                <a href="#" class="text-white mr-3">Esqueci a Senha</a>
+                                <span class="float-right"><a href="index.php" class="text-white">Cadastrar</a></span>
+                            </div>
+                    </div>
                     </form>
                 </div>
             </div>

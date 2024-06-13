@@ -77,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt->close();
     } elseif ($acao == "DELETAR") {
+        //Neste bloco será excluido um registro que já existe no BD
         $sql = "DELETE FROM usuarios WHERE id_usuario = ?";
         $stmt = $conn->prepare($sql);
         if ($stmt === false) {
@@ -216,7 +217,13 @@ if (!$resultado) {
         }
     </style>
 </head>
-
+<!-- 
+já fizemos o login no botao "Editar"
+(ir  no bd atraves de id e pegar todas as infos do usuario.
+login= pega o email do usuario e ao inves de fazer where id igual um numero, vc faz where email = email do usuario passado && senha = senha passada pelo usuario
+se voltar refgistro: login feito cm sucesso
+se nao voltar registros: login incorreto
+) -->
 <body>
     <div class="container">
         <form method="post" action="conexao.php">
@@ -226,7 +233,7 @@ if (!$resultado) {
                     <div class="col-sm-2">
                         <a href="../../projeto/dashboard.php
 
-    <!--  
+<!--      
     try {
     if ($stmt)}
     $stmt -> bind_param(
@@ -254,3 +261,4 @@ if (!$resultado) {
     bind param com o sssis la n sei fazer
 
     -->
+    <!--  -->

@@ -67,7 +67,7 @@ if ($id) {
             <input type="hidden" id="id_usuario" name="id_usuario">
             <input type="hidden" id="acao" name="acao" value="<?= isset($_GET['id']) ? "ALTERAR" : "INCLUIR" ?>">
             <fieldset class="border p-3 rounded">
-                <legend class="w-auto text-center p-" border-rounded"><?= ($id) ? "ALTERAÇÃO DE USUÁRIO" : "CADASTRO DE USUÁRIO" ?></legend>
+                <legend class="w-auto text-center p-"border-rounded"><?= ($id) ? "ALTERAÇÃO DE USUÁRIO" : "CADASTRO DE USUÁRIO" ?></legend>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
