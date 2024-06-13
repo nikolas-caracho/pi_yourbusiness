@@ -114,36 +114,109 @@ if (!$resultado) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista De Produtos</title>
     <style>
-        body { background-color: #343a40; color: #ffffff; margin-top: 20px; }
-        .container { background-color: #343a40; border-radius: 10px; padding: 20px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); }
-        .btn-primary { background-color: #007bff; border-color: #007bff; }
-        .btn-primary:hover { background-color: #0056b3; border-color: #0056b3; }
-        .btn-danger { background-color: #dc3545; border-color: #dc3545; }
-        .btn-danger:hover { background-color: #c82333; border-color: #bd2130; }
-        .btn-secondary { background-color: #6c757d; border-color: #6c757d; }
-        .btn-secondary:hover { background-color: #5a6268; border-color: #545b62; }
-        .form-control { background-color: #495057; color: #ffffff; border-color: #495057; }
-        .form-control:focus { background-color: #495057; color: #ffffff; border-color: #495057; box-shadow: none; }
-        .border { border-color: #ffffff !important; }
-        .thead-dark th { background-color: #343a40; color: #ffffff; border-color: #ffffff; }
-        .rounded { border-radius: 10px !important; }
-        .table-striped tbody tr:nth-of-type(odd) { background-color: #495057; }
-        .badge { border-radius: 10px; font-size: 12px; padding: 6px 10px; }
-        .badge-primary { background-color: #007bff; }
-        .badge-secondary { background-color: #6c757d; }
-        .text-white { color: #ffffff !important; }
+        body {
+            background-color: #343a40;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+
+        .container {
+            background-color: #343a40;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+        .form-control {
+            background-color: #495057;
+            color: #ffffff;
+            border-color: #495057;
+        }
+
+        .form-control:focus {
+            background-color: #495057;
+            color: #ffffff;
+            border-color: #495057;
+            box-shadow: none;
+        }
+
+        .border {
+            border-color: #ffffff !important;
+        }
+
+        .thead-dark th {
+            background-color: #343a40;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .rounded {
+            border-radius: 10px !important;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #495057;
+        }
+
+        .badge {
+            border-radius: 10px;
+            font-size: 12px;
+            padding: 6px 10px;
+        }
+
+        .badge-primary {
+            background-color: #007bff;
+        }
+
+        .badge-secondary {
+            background-color: #6c757d;
+        }
+
+        .text-white {
+            color: #ffffff !important;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <form method="post" action="conexao.php">
