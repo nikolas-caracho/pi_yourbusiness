@@ -45,7 +45,7 @@ INSERT INTO `produtos` (`id`, `nome`, `razao`, `fundacao`, `ramo`, `tamanho`, `p
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
-  `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_usuario` bigint(20) UNSIGNED NOT NULL,
   `cliente` varchar(254) NOT NULL,
   `nivel_acesso` tinyint(4) NOT NULL,
   `cep` varchar(10) DEFAULT NULL,
@@ -113,3 +113,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */; 

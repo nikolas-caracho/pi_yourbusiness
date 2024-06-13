@@ -9,6 +9,8 @@ if (!isset($conn) || $conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+
 // Prepara a consulta SQL
 $sql = "SELECT id, nome, razao, tamanho, fundacao, tributacao FROM produtos;";
 
@@ -187,14 +189,53 @@ if (!$resultado) {
                             <td><?= $linha['tributacao'] ?></td>
                         </tr>
                         <?php
-                    }
+
+                        // se a senha veio preenchida
+                        if($senha != "") {
+                            $sql ="UPDATE usuarios SET
+                            nome = ?,
+                            nivel_acesso = ?,
+                            cep = ?,
+                            endereco = ?,
+                            numero = ?,
+                            complemento = ?,
+                            cidade = ?,
+                            estado = ?,
+                            senha = ?,
+                            email =?,
+                            telefone=?,
+                            data_nascimento = ?,
+                            cpf= ?
+                        
+                            WHERE id_usuario = ?";
+                        }// com senha
+
+                        else{
+
+                            $sql ="UPDATE usuarios SET
+                            nome = ?,
+                            nivel_acesso = ?,
+                            cep = ?,
+                            endereco = ?,
+                            numero = ?,
+                            complemento = ?,
+                            cidade = ?,
+                            estado = ?,
+                            email =?,
+                            telefone=?,
+                            data_nascimento =?,
+                            cpf= ?
+                        
+                            WHERE id_usuario = ?";
+                        
+                        }// sem senha        
                     ?>
                 </tbody>
             </table>
         </form>
     </div>
     <footer class="footer bg-white border-top border-2 border-dark mt-5"> 
-        <!-- melhorar design do footer -->
+        <!-- melhorar design do footer --> 
         <div class="container text-center py-3">
             Projeto desenvolvido por: Nikolas Arruda
         </div>
