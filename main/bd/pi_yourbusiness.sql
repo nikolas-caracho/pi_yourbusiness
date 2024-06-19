@@ -29,11 +29,11 @@ CREATE TABLE `produtos` (
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `campo1`, `campo2`, `campo3`, `campo4`, `campo5`, `produto`, `estoque_minimo`) VALUES
-(1, '123', '123', 2023, 'Exemplo campo2 Social', 'P', 'Pequeno', '435543'),
-(2, 'eoqwoeq', 'asdsad', 2023, 'Outra campo2 Social', 'M', 'Médio', 's32324'),
-(3, 'qwpoeiju', 'eewee', 2023, 'Mais uma campo2 Social', 'G', 'Grande', 'ert'),
-(4, 'ewpqoekqw', 'eweewe', 2023, 'campo2 Social Ltda', 'P', 'Pequeno', 'ert');
+INSERT INTO `produtos` (`id`, `campo1`, `campo2`, `campo3`, `campo4`, `campo5`) VALUES
+(1, '123', '123', 2023, 'Exemplo campo2 Social', 'P'),
+(2, 'eoqwoeq', 'asdsad', 2023, 'Outra campo2 Social', 'M'),
+(3, 'qwpoeiju', 'eewee', 2023, 'Mais uma campo2 Social', 'G'),
+(4, 'ewpqoekqw', 'eweewe', 2023, 'campo2 Social Ltda', 'P');
 
 -- --------------------------------------------------------
 

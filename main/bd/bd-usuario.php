@@ -161,7 +161,7 @@ if ($acao == "INCLUIR") {
 
     try {
         if ($stmt->execute()) {
-            header('Location: /site-pi/usuarios');
+            header('main/usuarios');
         } else {
             echo $stmt->error;
         }
