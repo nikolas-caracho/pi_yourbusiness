@@ -7,22 +7,22 @@ if ($conn->connect_error) {
 }
 
 // Verifica se os campos foram enviados e não estão vazios
-$razao = isset($_POST['razao']) && !empty($_POST['razao']) ? $_POST['razao'] : "vazio";
-$fundacao = isset($_POST['fundacao']) && !empty($_POST['fundacao']) ? $_POST['fundacao'] : null;
-$ramo = isset($_POST['ramo']) && !empty($_POST['ramo']) ? $_POST['ramo'] : null;
-$tamanho = isset($_POST['tamanho']) && !empty($_POST['tamanho']) ? $_POST['tamanho'] : null;
-$tributos = isset($_POST['tributos']) && !empty($_POST['tributos']) ? $_POST['tributos'] : null;
+$campo1 = isset($_POST['campo1']) && !empty($_POST['campo1']) ? $_POST['campo1'] : "vazio";
+$campo2 = isset($_POST['campo2']) && !empty($_POST['campo2']) ? $_POST['campo2'] : null;
+$campo3 = isset($_POST['campo3']) && !empty($_POST['campo3']) ? $_POST['campo3'] : null;
+$campo4 = isset($_POST['campo4']) && !empty($_POST['campo4']) ? $_POST['campo4'] : null;
+$campo5 = isset($_POST['campo5']) && !empty($_POST['campo5']) ? $_POST['campo5'] : null;
 $acao = isset($_POST['acao']) && !empty($_POST['acao']) ? $_POST['acao'] : null;
 
-echo "Razão Social: " . $razao . "<br>";
-echo "Fundação: " . $fundacao . "<br>";
-echo "Ramo: " . $ramo . "<br>";
-echo "Tamanho: " . $tamanho . "<br>";
-echo "Tributos: " . $tributos . "<br>";
-echo "Ação: " . $acao . "<br>";
+echo "Campo 1: " . $campo1 . "<br>";
+echo "Campo 2: " . $campo2 . "<br>";
+echo "Campo 3: " . $campo3 . "<br>";
+echo "Campo 4: " . $campo4 . "<br>";
+echo "Campo 5: " . $campo5 . "<br>";
+echo "Campo 6: " . $acao . "<br>";
 
 if ($acao == "INCLUIR") {
-    $sql = "INSERT INTO produtos (razao, fundacao, ramo, tamanho, tributos)
+    $sql = "INSERT INTO produtos (campo1, campo2, campo3, campo4, campo5)
       VALUES (?, ?, ?, ?, ?);";
 
     $stmt = $conn->prepare($sql);
@@ -31,7 +31,7 @@ if ($acao == "INCLUIR") {
         die("Prepare failed: " . $conn->error);
     }
 
-    $stmt->bind_param("sssss", $razao, $fundacao, $ramo, $tamanho, $tributos);
+    $stmt->bind_param("sssss", $campo1, $campo2, $campo3, $campo4, $campo5);
 
     try {
         if ($stmt->execute()) {

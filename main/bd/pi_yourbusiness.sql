@@ -17,13 +17,11 @@ USE `pi_yourbusiness`;
 DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(200) NOT NULL,
-  `razao` varchar(200) NOT NULL,
-  `fundacao` year NOT NULL,
-  `ramo` varchar(200) NOT NULL,
-  `tamanho` varchar(20) NOT NULL,
-  `produto` varchar(200) NOT NULL,
-  `estoque_minimo` varchar(20) NOT NULL,
+  `campo1` varchar(200) NOT NULL,
+  `campo2` varchar(200) NOT NULL,
+  `campo3` varchar(200) NOT NULL,
+  `campo4` varchar(200) NOT NULL,
+  `campo5` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -31,11 +29,11 @@ CREATE TABLE `produtos` (
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `razao`, `fundacao`, `ramo`, `tamanho`, `produto`, `estoque_minimo`) VALUES
-(1, '123', '123', 2023, 'Exemplo Razao Social', 'P', 'Pequeno', '435543'),
-(2, 'eoqwoeq', 'asdsad', 2023, 'Outra Razao Social', 'M', 'Médio', 's32324'),
-(3, 'qwpoeiju', 'eewee', 2023, 'Mais uma Razao Social', 'G', 'Grande', 'ert'),
-(4, 'ewpqoekqw', 'eweewe', 2023, 'Razao Social Ltda', 'P', 'Pequeno', 'ert');
+INSERT INTO `produtos` (`id`, `campo1`, `campo2`, `campo3`, `campo4`, `campo5`, `produto`, `estoque_minimo`) VALUES
+(1, '123', '123', 2023, 'Exemplo campo2 Social', 'P', 'Pequeno', '435543'),
+(2, 'eoqwoeq', 'asdsad', 2023, 'Outra campo2 Social', 'M', 'Médio', 's32324'),
+(3, 'qwpoeiju', 'eewee', 2023, 'Mais uma campo2 Social', 'G', 'Grande', 'ert'),
+(4, 'ewpqoekqw', 'eweewe', 2023, 'campo2 Social Ltda', 'P', 'Pequeno', 'ert');
 
 -- --------------------------------------------------------
 
