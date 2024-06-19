@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
     <head>
@@ -34,10 +34,10 @@
                                 Usuários
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/projeto/usuarios/iu_usuario.php">Cadastro de usuário</a>
-                                <a class="dropdown-item" href="usuarios/cntrlUsers.php">Lista de usuários</a>
+                                <a class="dropdown-item" href="usuarios/iu_usuario.php">Cadastro de usuário</a>
+                                <a class="dropdown-item" href="usuarios/index.php">Lista de usuários</a>
                                 <a class="dropdown-item" href="produtos/cadastro_produto.php">Cadastro de itens</a>
-                                <a class="dropdown-item" href="produtos/">Lista de itens</a>
+                                <a class="dropdown-item" href="produtos/lista_produtos.php">Lista de itens</a>
                             </div>
                         </div>
                     </li>
@@ -49,12 +49,13 @@
                         type="submit">Search</button>
                 </form>
             </div>
+            
         </nav>
         <div class="container">
             <div class="col-sm-12">
                 <div>
                     <img
-                        src="https://busyability.org.au/wp-content/uploads/2021/04/yourbusinesshere.jpeg"
+                        src="../imgs/yourbusinesshere.png"
                         class="card-img-top" alt="...">
                 </div>
             </div>
@@ -63,7 +64,8 @@
 
         <footer class="footer bg-white border-top border-2 border-dark position-absolute w-100">
         <div class="container text-center py-3">
-            Projeto desenvolvido por: Nikolas Arruda
+            Projeto desenvolvido por: Nikolas Arruda Caracho
+                                        @idkbtwidc
         </div>
     </footer>
 
