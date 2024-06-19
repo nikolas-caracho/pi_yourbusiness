@@ -60,6 +60,9 @@ require 'utils/conexao.php';
             bottom: 0;
             width: 100%;
         }
+        img {
+            width: 150px;
+        }
     </style>
 </head>
 
@@ -69,7 +72,7 @@ require 'utils/conexao.php';
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="form-container">
-                    <img src="https://busyability.org.au/wp-content/uploads/2021/04/yourbusinesshere.jpeg" class="img-fluid logo" alt="Logo">
+                    <img src="../imgs/yourbusinesshere.png" class="img-fluid logo" alt="Logo">
                     <div class="card-body">
                         <?php
                         if (isset($_GET['erro'])) {
