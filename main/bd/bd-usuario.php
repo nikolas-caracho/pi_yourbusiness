@@ -318,8 +318,8 @@ se nao voltar registros: login incorreto
                 <legend class="w-auto p-1 border rounded">Lista De Produtos</legend>
                 <div class="row">
                     <div class="col-sm-2">
-                        <a href="../../projeto/dashboard.php
-
+                        <a href="../dashboard.php">
+    </body>
 <!--      
     try {
     if ($stmt)}
@@ -345,7 +345,7 @@ se nao voltar registros: login incorreto
     acao
 
 
-    bind param com o sssis la n sei fazer
+    bind param com o sssis la
 
     -->
     <!--  -->
