@@ -64,8 +64,7 @@
 
         <footer class="footer bg-white border-top border-2 border-dark position-absolute w-100">
         <div class="container text-center py-3">
-            Projeto desenvolvido por: Nikolas Arruda Caracho
-                                        @idkbtwidc
+            Projeto desenvolvido por: Nikolas Arruda Caracho                 
         </div>
     </footer>
 

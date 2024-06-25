@@ -161,7 +161,7 @@ if ($acao == "INCLUIR") {
 
     try {
         if ($stmt->execute()) {
-            header('main/usuarios');
+            header('Location: /pi_yourbusiness/main/usuarios');
         } else {
             echo $stmt->error;
         }
@@ -195,7 +195,7 @@ if ($acao == "INCLUIR") {
     // Se nenhuma das operações for solicitada, volta para o inicio do site.
     // A função header modifica o cabeçalho do navegador
     // Ao passar a propriedade location, definimos para qual URL o navegador deve ir.
-    header("Location: /site-pi/");
+    header("Location: /pi-yourbusiness/main");
     exit;
 }
 ?>
