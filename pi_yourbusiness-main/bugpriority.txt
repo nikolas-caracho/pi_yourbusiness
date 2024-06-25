@@ -1,0 +1,13 @@
+pi_yourbusiness/main/produtos/lista_produtos.php
+Uncaught mysqli_sql_exception: Table 'pi_yourbusiness.produtos' 
+doesn't exist in C:\xampp2\htdocs\pi_yourbusiness\main\produtos\lista_produtos.php:14 
+Stack trace: #0 C:\xampp2\htdocs\pi_yourbusiness\main\produtos\lista_produtos.php(14): 
+mysqli->query('SELECT id, nome...') #1 {main} thrown in C:\xampp2\htdocs\pi_yourbusiness\main\produtos\lista_produtos.php 
+on line 14
+
+
+Fatal error: Uncaught mysqli_sql_exception: Table 'pi_yourbusiness.usuarios'
+ doesn't exist in C:\xampp2\htdocs\pi_yourbusiness\main\usuarios\index.php:12
+ 
+Stack trace: #0 C:\xampp2\htdocs\pi_yourbusiness\main\usuarios\index.php(12): 
+mysqli->prepare('SELECT * FROM u...') #1 {main} thrown in C:\xampp2\htdocs\pi_yourbusiness\main\usuarios\index.php on line 12
