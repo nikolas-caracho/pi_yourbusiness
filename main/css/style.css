@@ -1,0 +1,120 @@
+
+body {
+    background-color: #343a40;
+    color: #ffffff;
+    overflow: hidden;
+    animation: backgroundChange 7.5s forwards; /* Animação de mudança de cor de fundo */
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-color: #343a40;
+    }
+    100% {
+        background-color: #ffffff;
+    }
+}
+
+.form-container {
+    background-color: #343a40;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.logo {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.titulo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+background-color: #343a40;
+color: #ffffff;
+text-align: center;
+padding: 10px 0;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+
+footer span {
+opacity: 0;
+/* Animação de opacidade */
+animation: opacidade 7.5s forwards;
+}
+
+@keyframes pulse {
+0% {
+opacity: 0.5;
+}
+50% {
+opacity: 1;
+}
+100% {
+opacity: 0.5;
+}
+}
+
+@keyframes opacidade {
+0% {
+opacity: 0;
+}
+95% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+.rotating-logo {
+position: absolute;
+width: 200px; /* Ajuste conforme o tamanho real da sua imagem */
+height: 200px; /* Ajuste conforme o tamanho real da sua imagem */
+border-radius: 50%;
+animation: combined1 5s forwards;
+top: 50%; /* Centraliza verticalmente */
+left: 50%; /* Centraliza horizontalmente */
+transform: translate(-50%, -50%);
+}
+.rotating-logo {
+display: block;
+margin: auto;
+width: 200px; /* Ajuste o tamanho conforme necessário */
+height: 200px; /* Ajuste o tamanho conforme necessário */
+border-radius: 50%;
+position: absolute;
+top: 50%; /* Centraliza verticalmente */
+left: 50%; /* Centraliza horizontalmente */
+transform: translate(-50%, -50%);
+animation: combined1 5s forwards; /* Animação com forwards para manter o estado final */
+animation-timing-function: ease-in-out 2.5s, linear 3s, ease-in-out 2s;
+}
+
+@keyframes combined1 {
+0% {
+transform: scale(5.5);
+animation-timing-function: ease-in-out;
+}
+50% {
+transform: translate(-50%, -50%) rotate(180deg) translate(15px) translateY(0) translateX(1000px) rotate(0) scale(2.5);
+animation-timing-function: linear;
+}
+75% {
+transform: translate(-50%, -50%) rotate(270deg) translate(15px) translateY(0) rotate(900deg) scale(6);
+animation-timing-function: ease-out;
+}
+100% {
+transform: translate(-50%, 100%) rotate(360deg) scale(3); /* Parado mais para baixo */
+}
+}
