@@ -92,7 +92,7 @@
             @keyframes combined1{
 
                 0% {
-                    transform:  matrix3d() scale(5.5);
+                    transform: scale(5.5);
                     animation-timing-function: ease-in-out;
                 }
                 50% {
