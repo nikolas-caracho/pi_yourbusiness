@@ -63,7 +63,7 @@ if ($acao == "INCLUIR") {
             $idCadastro = $conn->insert_id;
             echo $idCadastro;
 
-            header('Location: /pi_yourbusiness/main/usuarios');
+            header('Location: /pi-yourbusiness/main/usuarios');
         } else {
             echo $stmt->error;
         }

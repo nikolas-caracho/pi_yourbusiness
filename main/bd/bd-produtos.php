@@ -60,7 +60,7 @@ if ($acao == "INCLUIR") {
 } else if ($acao == "DELETAR") {
     // Adicione a lógica para exclusão aqui
 } else {
-    header("Location: /pi_yourbusiness/main/");
+    header("Location: /pi-yourbusiness/main/");
     exit;
 }
 ?>
