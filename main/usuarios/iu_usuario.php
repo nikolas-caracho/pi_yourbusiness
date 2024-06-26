@@ -32,7 +32,7 @@
         }
     ?>
     <div class="container">
-        <form action="/pi_yourbusiness/main/bd/bd-usuario.php" method="post">
+        <form action=<?= isset($_GET['id']) ? "/pi_yourbusiness/main/bd/bd-usuario.php?id=$id" : "/pi_yourbusiness/main/bd/bd-usuario.php" ?> method="post">
             <input type="hidden" id="id_usuario" name="id_usuario">
             <input type="hidden" id="acao" name="acao" value="<?= isset($user) ? "ALTERAR" : "INCLUIR" ?>">
             <fieldset class="border p-3 rounded">

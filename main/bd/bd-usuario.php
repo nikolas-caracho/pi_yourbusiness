@@ -73,8 +73,6 @@ if ($acao == "INCLUIR") {
     echo "</pre>";
 } else if ($acao == "ALTERAR") {
     if ($senha != "") {
-        if($senha != $confirmaSenha)
-            header("Location: /pi_yourbusiness/main/usuarios/iu_usuario.php?id=$idUsuario&invalido=1");
         $sql = "UPDATE usuarios SET 
                 nome = ?, email = ?, celular = ?, data_nascimento = ?, cpf = ?, nivel_acesso = ?, cep = ?, endereco = ?, numero = ?, complemento = ?, cidade = ?, estado = ?, senha = ?
                 WHERE id_usuario = ?;";
