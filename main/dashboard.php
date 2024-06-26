@@ -43,39 +43,68 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            /* Adicionando animação ao footer */
+            animation: pulse 7.0s infinite;
         }
 
-        .rotating-logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 200px;
-            height: 200px;
-            border-radius: 80%;
-            position: absolute;
-            top: 35%; /* Ajuste para mover o eixo para baixo */
-            left: 40%;
-            transform: translate(-50%, -50%);
-            animation: combined 7s linear infinite;
-        }
-
-        @keyframes combined {
+        @keyframes pulse {
             0% {
-                transform: translate(-50%, -50%) rotate(0deg) translate(50px) translateY(650px) rotate(0deg) scale(0.5);
-            }
-            25% {
-                transform: translate(-50%, -50%) rotate(90deg) translate(50px) translateY(600px) rotate(-90deg) scale(1.0);
+                opacity: 0.5;
             }
             50% {
-                transform: translate(-50%, -50%) rotate(180deg) translate(50px) translateY(550px) rotate(-180deg) scale(2.0);
+                opacity: 1;
             }
-            75% {
-                transform: translate(-50%, -50%) rotate(270deg) translate(50px) translateY(500px) rotate(-270deg) scale(1.5);
-            }
+
             100% {
-                transform: translate(-50%, -50%) rotate(360deg) translate(50px) translateY(300px) rotate(-360deg) scale(5);
+                opacity: 0.5;
             }
         }
+        .rotating-logo {
+    position: absolute;
+    width: 200px; /* Ajuste conforme o tamanho real da sua imagem */
+    height: 200px; /* Ajuste conforme o tamanho real da sua imagem */
+    border-radius: 50%;
+    animation: combined1 5s infinite;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+}
+            .rotating-logo {
+                display: block;
+                margin: auto;
+                width: 200px;
+                /* Ajuste o tamanho conforme necessário */
+                height: 200px;
+                /* Ajuste o tamanho conforme necessário */
+                border-radius: 50%;
+                position: absolute;
+                top: 100%;
+                /* Centraliza verticalmente */
+                left: 50%;
+                /* Centraliza horizontalmente */
+                transform: translate(-50%, -50%);
+                animation: combined1 5s infinite;
+                animation-timing-function: ease-in-out 2s;
+                animation-timing-function: linear 3s;
+                animation-timing-function: ease-in-out 4s;
+            }
+
+            @keyframes combined1{
+
+                0% {
+                    transform:  matrix3d() scale(5.5);
+                    animation-timing-function: ease-in-out;
+                }
+                50% {
+                    transform: translate(-50%, -50%) rotate(180deg) translate(15px) translateY(0) translateX(1000px) rotate(0) scale(2.5);
+                    animation-timing-function: linear;
+                }
+
+                75% {
+                    transform: translate(-50%, -50%) rotate(270deg) translate(15px) translateY(0) rotate(900deg) scale(6);
+                    animation-timing-function: ease-out;
+                }
+            }
     </style>
 </head>
 
@@ -112,14 +141,15 @@
     <div class="container">
         <div class="col-sm-12">
             <div>
-                <img src="imgs/yourbusinesshere.png" class="rotating-logo" alt="...">
+                <img src="imgs/yourbusinesshere.png" class="rotating-logo" alt="360mlg logo">
             </div>
         </div>
     </div>
 
     <footer class="footer bg-white border-top border-2 text-bold border-dark position-absolute w-100">
         <div class="container text-center py-3">
-            Projeto desenvolvido por: Nikolas Arruda Caracho
+            <span style="animation: blink 1s infinite; color: black; font-weight: bold;">Projeto desenvolvido por: Nikolas Arruda Caracho</span>
+        </div>
         </div>
     </footer>
 
