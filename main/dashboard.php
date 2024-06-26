@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Yourbusiness </title>
+    <title>Yourbusiness</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <style>
-        /* Seus estilos personalizados aqui */
         body {
             background-color: #343a40;
             color: #ffffff;
+            overflow: hidden;
         }
 
         .form-container {
@@ -26,7 +26,6 @@
             height: auto;
             display: block;
             margin: 0 auto 20px;
-            /* Centralizar a imagem */
         }
 
         .titulo {
@@ -50,26 +49,37 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 200px; /* Ajuste para tamanho desejado */
-            height: 200px; /* Ajuste para tamanho desejado */
-            border-radius: 50%;
-            animation: rotate 4s linear infinite;
+            width: 200px;
+            height: 200px;
+            border-radius: 80%;
+            position: absolute;
+            top: 35%; /* Ajuste para mover o eixo para baixo */
+            left: 40%;
+            transform: translate(-50%, -50%);
+            animation: combined 7s linear infinite;
         }
 
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
+        @keyframes combined {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg) translate(50px) translateY(650px) rotate(0deg) scale(0.5);
             }
-            to {
-                transform: rotate(360deg);
+            25% {
+                transform: translate(-50%, -50%) rotate(90deg) translate(50px) translateY(600px) rotate(-90deg) scale(1.0);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg) translate(50px) translateY(550px) rotate(-180deg) scale(2.0);
+            }
+            75% {
+                transform: translate(-50%, -50%) rotate(270deg) translate(50px) translateY(500px) rotate(-270deg) scale(1.5);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg) translate(50px) translateY(300px) rotate(-360deg) scale(5);
             }
         }
     </style>
-
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Administração</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,8 +107,8 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-
     </nav>
+
     <div class="container">
         <div class="col-sm-12">
             <div>
@@ -107,8 +117,7 @@
         </div>
     </div>
 
-
-    <footer class="footer bg-white border-top border-2 border-dark position-absolute w-100">
+    <footer class="footer bg-white border-top border-2 text-bold border-dark position-absolute w-100">
         <div class="container text-center py-3">
             Projeto desenvolvido por: Nikolas Arruda Caracho
         </div>
@@ -116,7 +125,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>
