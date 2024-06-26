@@ -105,7 +105,7 @@
                                 <option <?= (isset($_GET['id']) && $user['estado'] == "PI") ? "selected" : '' ?>>PI</option>
                                 <option <?= (isset($_GET['id']) && $user['estado'] == "RJ") ? "selected" : '' ?>>RJ</option>
                                 <option <?= (isset($_GET['id']) && $user['estado'] == "RN") ? "selected" : '' ?>>RN</option>
-                                <option <?= (isset($_GET['id']) && $user['estado'] == "RS") ?                                 "selected" : '' ?>>RS</option>
+                                <option <?= (isset($_GET['id']) && $user['estado'] == "RS") ? "selected" : '' ?>>RS</option>
                                 <option <?= (isset($_GET['id']) && $user['estado'] == "RO") ? "selected" : '' ?>>RO</option>
                                 <option <?= (isset($_GET['id']) && $user['estado'] == "RR") ? "selected" : '' ?>>RR</option>
                                 <option <?= (isset($_GET['id']) && $user['estado'] == "SC") ? "selected" : '' ?>>SC</option>
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" class="btn btn-primary">Incluir</button>
                     </div>
                 </div>
             </fieldset>

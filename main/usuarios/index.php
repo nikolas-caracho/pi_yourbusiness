@@ -97,8 +97,6 @@ $nivel = array(
 
                         <tbody>
                             <?php
-
-
                             while($linha = $dados->fetch_assoc()){
                                 ?>
                                 <tr scope="row">

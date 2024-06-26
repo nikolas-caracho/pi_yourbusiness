@@ -7,18 +7,21 @@
     <title>Yourbusiness</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <style>
+    <!-- arrumar o css dpz -->
+    <style>
         body {
             background-color: #343a40;
             color: #ffffff;
             overflow: hidden;
-            animation: backgroundChange 7.5s forwards; /* Animação de mudança de cor de fundo */
+            animation: backgroundChange 2.5s forwards;
+            /* Animação de mudança de cor de fundo */
         }
 
         @keyframes backgroundChange {
             0% {
                 background-color: #343a40;
             }
+
             100% {
                 background-color: #ffffff;
             }
@@ -47,87 +50,72 @@
         }
 
         footer {
-    background-color: #343a40;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
-footer span {
-    opacity: 0;
-    /* Animação de opacidade */
-    animation: opacidade 7.5s forwards;
-}
+        footer span {
+            opacity: 0;
+            /* Animação de opacidade */
+            animation: opacidade 2.9s forwards;
+        }
 
-@keyframes pulse {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.5;
-    }
-}
+        @keyframes opacidade {
+            0% {
+                opacity: 0;
+            }
 
-@keyframes opacidade {
-    0% {
-        opacity: 0;
-    }
-    95% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+            95% {
+                opacity: 0;
+            }
 
+            100% {
+                opacity: 1;
+            }
+        }
         .rotating-logo {
-    position: absolute;
-    width: 200px; /* Ajuste conforme o tamanho real da sua imagem */
-    height: 200px; /* Ajuste conforme o tamanho real da sua imagem */
-    border-radius: 50%;
-    animation: combined1 5s forwards;
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%);
-}
-.rotating-logo {
-    display: block;
-    margin: auto;
-    width: 200px; /* Ajuste o tamanho conforme necessário */
-    height: 200px; /* Ajuste o tamanho conforme necessário */
-    border-radius: 50%;
-    position: absolute;
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%);
-    animation: combined1 5s forwards; /* Animação com forwards para manter o estado final */
-    animation-timing-function: ease-in-out 2.5s, linear 3s, ease-in-out 2s;
-}
+            display: block;
+            margin: auto;
+            width: 200px;
+            /* Ajuste o tamanho conforme necessário */
+            height: 200px;
+            /* Ajuste o tamanho conforme necessário */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            /* Centraliza verticalmente */
+            left: 50%;
+            /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%);
+            animation: combined1 2.8s forwards;
+        }
 
-@keyframes combined1 {
-    0% {
-        transform: scale(5.5);
-        animation-timing-function: ease-in-out;
-    }
-    50% {
-        transform: translate(-50%, -50%) rotate(180deg) translate(15px) translateY(0) translateX(1000px) rotate(0) scale(2.5);
-        animation-timing-function: linear;
-    }
-    75% {
-        transform: translate(-50%, -50%) rotate(270deg) translate(15px) translateY(0) rotate(900deg) scale(6);
-        animation-timing-function: ease-out;
-    }
-    100% {
-        transform: translate(-50%, 110%) rotate(360deg) scale(3); /* Parado mais para baixo */
-    }
-}
+        @keyframes combined1 {
+            0% {
+                transform: scale(5.5);
+            
+            }
 
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg) translate(15px) translateY(0) translateX(1000px) rotate(0) scale(2.5);
+                
+            }
+
+            75% {
+                transform: translate(-50%, -50%) rotate(270deg) translate(15px) translateY(0) rotate(900deg) scale(6);
+                
+            }
+
+            100% {
+                transform: translate(-50%, 110%) rotate(360deg) scale(3);
+                
+            }
+        }
     </style>
 </head>
 
@@ -150,6 +138,7 @@ footer span {
                             <a class="dropdown-item" href="usuarios/index.php">Lista de usuários</a>
                             <a class="dropdown-item" href="produtos/cadastro_produto.php">Cadastro de itens</a>
                             <a class="dropdown-item" href="produtos/lista_produtos.php">Lista de itens</a>
+                            <a class="dropdown-item" href="index.php">Sair</a>
                         </div>
                     </div>
                 </li>

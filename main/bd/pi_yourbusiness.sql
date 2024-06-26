@@ -15,25 +15,28 @@ USE `pi_yourbusiness`;
 --
 
 DROP TABLE IF EXISTS `produtos`;
+
 CREATE TABLE `produtos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `campo1` varchar(200) NOT NULL,
-  `campo2` varchar(200) NOT NULL,
-  `campo3` varchar(200) NOT NULL,
-  `campo4` varchar(200) NOT NULL,
-  `campo5` varchar(20) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(200) NOT NULL,
+  `razaosocial` VARCHAR(200) NOT NULL,
+  `ano` YEAR NOT NULL,
+  `ramo` VARCHAR(200) NOT NULL,
+  `produto` VARCHAR(20) NOT NULL,
+  `tributacao` TINYINT(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `campo1`, `campo2`, `campo3`, `campo4`, `campo5`) VALUES
-(1, '123', '123', 2023, 'Exemplo campo2 Social', 'P'),
-(2, 'eoqwoeq', 'asdsad', 2023, 'Outra campo2 Social', 'M'),
-(3, 'qwpoeiju', 'eewee', 2023, 'Mais uma campo2 Social', 'G'),
-(4, 'ewpqoekqw', 'eweewe', 2023, 'campo2 Social Ltda', 'P');
+INSERT INTO `produtos` (`id`, `nome`, `razaosocial`, `ano`, `ramo`, `produto`, `tributacao`) VALUES
+(1, 'Cliente 1', 'Empresa 1', 2000, 'Exemplo campo2 Social', 'P', 0),
+(2, 'Cliente 2', 'Empresa 2', 1501, 'Outra campo2 Social', 'Pau Brasil', 1),
+(3, 'Cliente 3', 'Empres a3', 1945, 'Mais uma campo2 Social', '(())', 0),
+(4, 'Cliente 4', 'Empresa 4', 1984, 'campo2 Social Ltda', 'Produtos', 1),
+(5, 'Cliente 5', 'Empresa 5', 2001, 'campo2 Social Ltda', 'Aviões', 0);
 
 -- --------------------------------------------------------
 

@@ -7,22 +7,24 @@ if ($conn->connect_error) {
 }
 
 // Verifica se os campos foram enviados e não estão vazios
-$campo1 = isset($_POST['campo1']) && !empty($_POST['campo1']) ? $_POST['campo1'] : "vazio";
-$campo2 = isset($_POST['campo2']) && !empty($_POST['campo2']) ? $_POST['campo2'] : null;
-$campo3 = isset($_POST['campo3']) && !empty($_POST['campo3']) ? $_POST['campo3'] : null;
-$campo4 = isset($_POST['campo4']) && !empty($_POST['campo4']) ? $_POST['campo4'] : null;
-$campo5 = isset($_POST['campo5']) && !empty($_POST['campo5']) ? $_POST['campo5'] : null;
+$nome = isset($_POST['nome']) && !empty($_POST['nome']) ? $_POST['nome'] : "";
+$razaosocial = isset($_POST['razaosocial']) && !empty($_POST['razaosocial']) ? $_POST['razaosocial'] : "";
+$ano = isset($_POST['ano']) && !empty($_POST['ano']) ? $_POST['ano'] : null;
+$ramo = isset($_POST['ramo']) && !empty($_POST['ramo']) ? $_POST['ramo'] : "";
+$produto = isset($_POST['produto']) && !empty($_POST['produto']) ? $_POST['produto'] : "";
+$tributacao = isset($_POST['tributacao']) && !empty($_POST['tributacao']) ? $_POST['tributacao'] : null;
 $acao = isset($_POST['acao']) && !empty($_POST['acao']) ? $_POST['acao'] : null;
 
-echo "Campo 1: " . $campo1 . "<br>";
-echo "Campo 2: " . $campo2 . "<br>";
-echo "Campo 3: " . $campo3 . "<br>";
-echo "Campo 4: " . $campo4 . "<br>";
-echo "Campo 5: " . $campo5 . "<br>";
-echo "Campo 6: " . $acao . "<br>";
+echo "Nome: " . $nome . "<br>";
+echo "Razão Social: " . $razaosocial . "<br>";
+echo "Ano de fundação: " . $ano . "<br>";
+echo "Ramo empresarial: " . $ramo . "<br>";
+echo "Produto principal: " . $produto . "<br>";
+echo "Sistema tributário: " . $tributacao . "<br>";
+echo "Ação: " . $acao . "<br>";
 
 if ($acao == "INCLUIR") {
-    $sql = "INSERT INTO produtos (campo1, campo2, campo3, campo4, campo5)
+    $sql = "INSERT INTO produtos (nome, razaosocial, ano, ramo, ramo)
       VALUES (?, ?, ?, ?, ?);";
 
     $stmt = $conn->prepare($sql);
@@ -31,7 +33,7 @@ if ($acao == "INCLUIR") {
         die("Prepare failed: " . $conn->error);
     }
 
-    $stmt->bind_param("sssss", $campo1, $campo2, $campo3, $campo4, $campo5);
+    $stmt->bind_param("ssssss", $nome, $razaosocial, $ano, $ramo, $ramo);
 
     try {
         if ($stmt->execute()) {
