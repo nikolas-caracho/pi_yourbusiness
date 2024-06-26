@@ -11,6 +11,16 @@
             background-color: #343a40;
             color: #ffffff;
             overflow: hidden;
+            animation: backgroundChange 7.5s forwards; /* Animação de mudança de cor de fundo */
+        }
+
+        @keyframes backgroundChange {
+            0% {
+                background-color: #343a40;
+            }
+            100% {
+                background-color: #ffffff;
+            }
         }
 
         .form-container {
@@ -36,75 +46,87 @@
         }
 
         footer {
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            /* Adicionando animação ao footer */
-            animation: pulse 7.0s infinite;
-        }
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
-        @keyframes pulse {
-            0% {
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
+footer span {
+    opacity: 0;
+    /* Animação de opacidade */
+    animation: opacidade 7.5s forwards;
+}
 
-            100% {
-                opacity: 0.5;
-            }
-        }
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes opacidade {
+    0% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
         .rotating-logo {
     position: absolute;
     width: 200px; /* Ajuste conforme o tamanho real da sua imagem */
     height: 200px; /* Ajuste conforme o tamanho real da sua imagem */
     border-radius: 50%;
-    animation: combined1 5s infinite;
+    animation: combined1 5s forwards;
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%);
 }
-            .rotating-logo {
-                display: block;
-                margin: auto;
-                width: 200px;
-                /* Ajuste o tamanho conforme necessário */
-                height: 200px;
-                /* Ajuste o tamanho conforme necessário */
-                border-radius: 50%;
-                position: absolute;
-                top: 100%;
-                /* Centraliza verticalmente */
-                left: 50%;
-                /* Centraliza horizontalmente */
-                transform: translate(-50%, -50%);
-                animation: combined1 5s infinite;
-                animation-timing-function: ease-in-out 2s;
-                animation-timing-function: linear 3s;
-                animation-timing-function: ease-in-out 4s;
-            }
+.rotating-logo {
+    display: block;
+    margin: auto;
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    height: 200px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    animation: combined1 5s forwards; /* Animação com forwards para manter o estado final */
+    animation-timing-function: ease-in-out 2.5s, linear 3s, ease-in-out 2s;
+}
 
-            @keyframes combined1{
+@keyframes combined1 {
+    0% {
+        transform: scale(5.5);
+        animation-timing-function: ease-in-out;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) translate(15px) translateY(0) translateX(1000px) rotate(0) scale(2.5);
+        animation-timing-function: linear;
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(270deg) translate(15px) translateY(0) rotate(900deg) scale(6);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate(-50%, 100%) rotate(360deg) scale(3); /* Parado mais para baixo */
+    }
+}
 
-                0% {
-                    transform: scale(5.5);
-                    animation-timing-function: ease-in-out;
-                }
-                50% {
-                    transform: translate(-50%, -50%) rotate(180deg) translate(15px) translateY(0) translateX(1000px) rotate(0) scale(2.5);
-                    animation-timing-function: linear;
-                }
-
-                75% {
-                    transform: translate(-50%, -50%) rotate(270deg) translate(15px) translateY(0) rotate(900deg) scale(6);
-                    animation-timing-function: ease-out;
-                }
-            }
     </style>
 </head>
 
@@ -148,7 +170,7 @@
 
     <footer class="footer bg-white border-top border-2 text-bold border-dark position-absolute w-100">
         <div class="container text-center py-3">
-            <span style="animation: blink 1s infinite; color: black; font-weight: bold;">Projeto desenvolvido por: Nikolas Arruda Caracho</span>
+            <span style=" color: black; font-weight: bold;">Projeto desenvolvido por: Nikolas Arruda Caracho</span>
         </div>
         </div>
     </footer>
