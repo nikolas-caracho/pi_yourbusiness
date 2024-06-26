@@ -1,4 +1,4 @@
-# pi_yourbusiness
+# pi-yourbusiness
 
 <!-- Possibilidades
 A) Site de vendas de Templates???? (mt visual)
