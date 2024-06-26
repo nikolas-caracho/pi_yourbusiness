@@ -33,7 +33,7 @@ if ($acao == "INCLUIR") {
         die("Prepare failed: " . $conn->error);
     }
 
-    $stmt->bind_param("sssisi", $nome, $razaosocial, $ano, $ramo, $produto, $tributacao);
+    $stmt->bind_param("ssissi", $nome, $razaosocial, $ano, $ramo, $produto, $tributacao);
 
     try {
         if ($stmt->execute()) {

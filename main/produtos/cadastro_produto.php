@@ -28,19 +28,11 @@
                     </div>
                     <div class="col-sm-6">
                         <label for="fundacao">Ano de criação:</label>
-                        <input class="form-control" id="fundacao" name="fundacao" type="" placeholder="Fundação">
+                        <input class="form-control" id="fundacao" name="fundacao" type="number" placeholder="Ano de fundação">
                     </div>
                     <div class="col-sm-6">
                         <label for="ramo">Ramo:</label>
                         <input class="form-control" id="ramo" name="ramo" type="text" placeholder="Ramo">
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="tamanho">Tamanho do produto:</label>
-                        <select class="form-control" id="tamanho" name="tamanho">
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                        </select>
                     </div>
 
                     <div class="col-sm-6">

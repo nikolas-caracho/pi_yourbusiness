@@ -1,5 +1,8 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
+START TRANSACTION; /* 
+SÓ USAR O COMMIT QUANDO NAO DER MAIS ERRO,
+ PQ AI TD QUE DER CERTO N ENTRA SE DER ALGUM ERRO */
+
 SET time_zone = "+00:00";
 
 --
@@ -82,24 +85,6 @@ INSERT INTO `usuarios` (`id_usuario`, `nome`, `email`, `celular`, `data_nascimen
 (12, 'vazio', '546546', '123456', '2024-05-09', '123456', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf'),
 (13, 'vazio', '546546', '123456', '2024-05-09', '123456', 1, '123456', '123456', '123456', '123456', '123456', '17', 'dsfsdf');
 
---
--- Índices para tabela `produtos`
---
-ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices para tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `produtos`
 -- 
 ALTER TABLE `produtos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
