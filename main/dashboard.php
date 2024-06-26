@@ -124,7 +124,7 @@ footer span {
         animation-timing-function: ease-out;
     }
     100% {
-        transform: translate(-50%, 100%) rotate(360deg) scale(3); /* Parado mais para baixo */
+        transform: translate(-50%, 110%) rotate(360deg) scale(3); /* Parado mais para baixo */
     }
 }
 
