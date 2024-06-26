@@ -23,7 +23,7 @@ Colocar na mesma ordem do Script SQL
 $stmt->bind_result($id_usuario, $nome, $nivel_acesso, $email, $telefone, $cpf)
 */
 $nivel = array(
-    'administrador', 'usuario'
+    'usuario', 'administrador'
 );
 
 ?>
@@ -101,7 +101,7 @@ $nivel = array(
                                 ?>
                                 <tr scope="row">
                                 <td>
-                                    <a href="#excluir" class="btn btn-danger">
+                                    <a href="../bd/bd-usuario.php?id=<?= $linha['id_usuario'] ?>&acao=DELETAR" class="btn btn-danger">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                     <a href="iu_usuario.php?id=<?= $linha['id_usuario']?>" class="btn btn-secondary">
@@ -109,8 +109,8 @@ $nivel = array(
                                     </a>
                                 </td>
                                 <td><?=$linha['id_usuario']?></td>
-                                <td>p<?=$linha['nome']?></td>
-                                <td><?=$linha['telefone']?></td>
+                                <td><?=$linha['nome']?></td>
+                                <td><?=$linha['celular']?></td>
                                 <td>
                                     <span class="badge <?= $corNivel[$linha['nivel_acesso']]?>">
                                     <?= $nivel[$linha['nivel_acesso']]?>

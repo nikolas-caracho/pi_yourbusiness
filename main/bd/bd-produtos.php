@@ -6,6 +6,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$id = 0;
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
 // Verifica se os campos foram enviados e não estão vazios
 $nome = isset($_POST['nome']) && !empty($_POST['nome']) ? $_POST['nome'] : "";
 $razaosocial = isset($_POST['razaosocial']) && !empty($_POST['razaosocial']) ? $_POST['razaosocial'] : "";
@@ -14,6 +18,11 @@ $ramo = isset($_POST['ramo']) && !empty($_POST['ramo']) ? $_POST['ramo'] : "";
 $produto = isset($_POST['produto']) && !empty($_POST['produto']) ? $_POST['produto'] : "";
 $tributacao = isset($_POST['tributacao']) && !empty($_POST['tributacao']) ? $_POST['tributacao'] : null;
 $acao = isset($_POST['acao']) && !empty($_POST['acao']) ? $_POST['acao'] : null;
+
+if($acao == null && isset($_GET['acao'])) {
+    $acao = $_GET['acao'];
+}
+
 
 echo "Nome: " . $nome . "<br>";
 echo "Razão Social: " . $razaosocial . "<br>";
@@ -34,35 +43,41 @@ if ($acao == "INCLUIR") {
     }
 
     $stmt->bind_param("ssissi", $nome, $razaosocial, $ano, $ramo, $produto, $tributacao);
-
-    try {
-        if ($stmt->execute()) {
-            $idCadastro = $conn->insert_id;
-            echo "ID do Cadastro: " . $idCadastro;
-        } else {
-            echo "Erro na execução: " . $stmt->error;
-        }
-    } catch (Exception $e) {
-        echo "Erro ao cadastrar: " . $e->getMessage();
-        ?>
-        <script>
-            history.back();
-        </script>
-        <?php
-    }
-
-    $stmt->close();
-    $conn->close();
-
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
 } else if ($acao == "ALTERAR") {
-    // Adicione a lógica para atualização aqui
+    if($id > 0) {
+        $sql = "UPDATE produtos SET nome = ?, razaosocial = ?, ano = ?, ramo = ?, produto = ?, tributacao = ? WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bind_param("ssissii", $nome, $razaosocial, $ano, $ramo, $produto, $tributacao, $id);
+    }
 } else if ($acao == "DELETAR") {
-    // Adicione a lógica para exclusão aqui
+    if($id > 0) {
+        $sql = "DELETE FROM produtos WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bind_param("i", $id);
+    }
 } else {
     header("Location: /pi-yourbusiness/main/");
     exit;
 }
+
+try {
+    if ($stmt->execute()) {
+        $idCadastro = $conn->insert_id;
+        echo "ID do Cadastro: " . $idCadastro;
+        header("Location: /pi_yourbusiness/main/produtos/lista_produtos.php");
+    } else {
+        echo "Erro na execução: " . $stmt->error;
+    }
+} catch (Exception $e) {
+    echo "Erro: " . $e->getMessage();
+}
+
+$stmt->close();
+$conn->close();
+
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
 ?>

@@ -35,11 +35,11 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `razaosocial`, `ano`, `ramo`, `produto`, `tributacao`) VALUES
-(1, 'Cliente 1', 'Empresa 1', 2000, 'Exemplo campo2 Social', 'P', 0),
+(1, 'Cliente 1', 'Empresa 1', 2000, 'Exemplo campo2 Social', 'P', 2),
 (2, 'Cliente 2', 'Empresa 2', 1501, 'Outra campo2 Social', 'Pau Brasil', 1),
-(3, 'Cliente 3', 'Empres a3', 1945, 'Mais uma campo2 Social', '(())', 0),
+(3, 'Cliente 3', 'Empres a3', 1945, 'Mais uma campo2 Social', '(())', 2),
 (4, 'Cliente 4', 'Empresa 4', 1984, 'campo2 Social Ltda', 'Produtos', 1),
-(5, 'Cliente 5', 'Empresa 5', 2001, 'campo2 Social Ltda', 'Aviões', 0);
+(5, 'Cliente 5', 'Empresa 5', 2001, 'campo2 Social Ltda', 'Aviões', 2);
 
 -- --------------------------------------------------------
 
@@ -95,8 +95,3 @@ ALTER TABLE `produtos`
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

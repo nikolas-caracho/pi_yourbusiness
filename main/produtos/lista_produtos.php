@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 }
 
 // Prepara a consulta SQL
-$sql = "SELECT id, nome, razao, tamanho, fundacao, tributacao FROM produtos;";
+$sql = "SELECT id, nome, razaosocial, ramo, ano, tributacao FROM produtos;";
 
 // Executa a consulta SQL
 $resultado = $conn->query($sql);
@@ -77,7 +77,7 @@ if (!$resultado) {
                         ?>
                         <tr scope="row">
                             <td>
-                                <a href="#excluir" class="btn btn-danger">
+                                <a href="../bd/bd-produtos.php?id=<?= $linha['id'] ?>&acao=DELETAR" class="btn btn-danger">
                                     <i class="fas fa-trash"></i>
                                 </a>
                                 <a href="cadastro_produto.php?id=<?= $linha['id'] ?>" class="btn btn-secondary">
@@ -86,10 +86,10 @@ if (!$resultado) {
                             </td>
                             <td><?= $linha['id'] ?></td>
                             <td><?= $linha['nome'] ?></td>
-                            <td><?= $linha['razao'] ?></td>
-                            <td><?= $linha['tamanho'] ?></td>
-                            <td><?= $linha['fundacao'] ?></td>
-                            <td><?= $linha['tributacao'] ?></td>
+                            <td><?= $linha['razaosocial'] ?></td>
+                            <td><?= $linha['ramo'] ?></td>
+                            <td><?= $linha['ano'] ?></td>
+                            <td><?= $linha['tributacao'] == 1 ? 'Lucro presumido' : 'Lucro real' ?></td>
                         </tr>
                         <?php
                     }
